@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>exercise-4</title>
+    <style>
+      @media (max-width: 500px) {
+        body {
+          background-color: #020035;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          height: 100vh;
+          animation: backgroundAnimation 2.5s linear infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+          0% {
+            background-color: #020035;
+          }
+          100% {
+            background-color: #597aa5;
+          }
+        }
+        .moon {
+          width: 10rem;
+          height: 10rem;
+          border-radius: 50%;
+          box-shadow: 0 16rem 0 0 rgb(235, 235, 235);
+          animation: moonAnimation 2.5s linear infinite alternate;
+        }
+
+        @keyframes moonAnimation {
+          0% {
+            box-shadow: 0 -100vh 0 0 #fffde7;
+          }
+          100% {
+            box-shadow: 0 0 0 0 #597aa5;
+          }
+        }
+      }
+      @media (min-width: 501px) and (max-width: 700px) {
+        body {
+          font-family: sans-serif;
+          text-align: center;
+          margin: 0;
+          height: 100vh;
+          overflow: hidden;
+          opacity: 1;
+          background: linear-gradient(45deg, #f5e0dd, #597aa5);
+          background-size: 400% 400%;
+          animation: gradient 12s ease infinite;
+        }
+
+        .container {
+          display: flex;
+          align-items: center;
+          justify-content: left;
+        }
+
+        .container div {
+          height: 200px;
+          width: 200px;
+          border-radius: 100px;
+          margin-right: 0px;
+        }
+        .circle {
+          width: 150px;
+          height: 150px;
+          background-color: rgb(252, 246, 205);
+          border-radius: 50%;
+          animation-duration: 5s;
+          /* animation-iteration-count: 3; */
+          animation-iteration-count: infinite;
+          animation-timing-function: linear;
+        }
+
+        .diagonal-to-top-right {
+          animation-name: diagonal-to-top-right;
+        }
+
+        @keyframes diagonal-to-top-right {
+          from {
+            transform: translateX(0) translateY(50px);
+          }
+
+          to {
+            transform: translateX(1200px) translateY(1000px);
+          }
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+      @media (min-width: 701px) and (max-width: 1199px) {
+        /* Styles for screens between 1200px and 1399px */
+        body {
+          padding: 200px;
+          background: linear-gradient(45deg, #f47429, #fbe16a);
+          background-size: 400% 400%;
+          animation: gradient 3s ease infinite;
+        }
+
+        .container {
+          display: flex;
+          width: 1000px;
+
+          align-items: flex-start;
+          justify-content: left;
+        }
+
+        .wrapper {
+          width: 900px;
+          animation: drawArc1 3s linear infinite;
+          margin: -15px;
+        }
+
+        .inner {
+          border-radius: 50%;
+          display: inline-block;
+          padding: 90px;
+          background: rgb(255, 255, 250);
+          animation: drawArc2 3s linear infinite;
+        }
+
+        @keyframes drawArc1 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(180deg);
+          }
+        }
+
+        @keyframes drawArc2 {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(-180deg);
+          }
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+      @media (min-width: 1200px) {
+        body {
+          font-family: sans-serif;
+          text-align: center;
+          margin: 0;
+          height: 100vh;
+          overflow: hidden;
+          opacity: 1;
+          background-color: #fcfbf4;
+          /*background: linear-gradient(-45deg, #fdfaed, #46556b, #1e3558, #18254f); */
+          background-size: 400% 400%;
+          animation: gradient 10s ease-in-out infinite;
+        }
+
+        .container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-top: -800px;
+        }
+
+        .container div {
+          height: 800px;
+          width: 200px;
+          border-radius: 100px;
+          margin-right: 25px;
+        }
+
+        .container .one {
+          background: #f47429;
+          animation: colorTransition-1 4.5s ease infinite;
+        }
+
+        .container .two {
+          background: #fbe16a;
+          animation: colorTransition-2 4.6s ease infinite;
+        }
+
+        .container .three {
+          background: #f5e0dd;
+          animation: colorTransition-3 4.7s ease infinite;
+        }
+
+        .container .four {
+          background: #9094b7;
+          animation: colorTransition-4 4.8s ease infinite;
+        }
+
+        .container .five {
+          background: #597aa5;
+          animation: colorTransition-5 4.9s ease infinite;
+        }
+        .container .six {
+          background: #18254f;
+          animation: colorTransition-6 5s ease infinite;
+        }
+
+        .animate {
+          animation-duration: 15s;
+          animation-name: animate-bounce;
+          animation-timing-function: ease;
+          animation-fill-mode: both;
+          animation-iteration-count: infinite;
+        }
+        @keyframes animate-bounce {
+          0%,
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes colorTransition-1 {
+          0% {
+            background: #fbe16a;
+          }
+          50% {
+            background: #f47429;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #fbe16a;
+          }
+        }
+
+        @keyframes colorTransition-2 {
+          0% {
+            background: #f5e0dd;
+          }
+          50% {
+            background: #fbe16a;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #f5e0dd;
+          }
+        }
+
+        @keyframes colorTransition-3 {
+          0% {
+            background: #9094b7;
+          }
+          50% {
+            background: #f5e0dd;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #9094b7;
+          }
+        }
+        @keyframes colorTransition-4 {
+          0% {
+            background: #597aa5;
+          }
+          50% {
+            background: #9094b7;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #597aa5;
+          }
+        }
+        @keyframes colorTransition-5 {
+          0% {
+            background: #18254f;
+          }
+          50% {
+            background: #597aa5;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #18254f;
+          }
+        }
+        @keyframes colorTransition-6 {
+          0% {
+            background: #ffffff;
+          }
+          50% {
+            background: #18254f;
+            transform: translateY(200vh);
+          }
+          100% {
+            background: #ffffff;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container animate">
+      <div class="one animate bounce colorTransition-1"></div>
+      <div class="two animate bounce colorTransition-2"></div>
+      <div class="three animate bounce colorTransition-3"></div>
+      <div class="four animate bounce colorTransition-4"></div>
+      <div class="five animate bounce colorTransition-5"></div>
+      <div class="six animate bounce colorTransition-6"></div>
+    </div>
+    <div class="container">
+      <div class="wrapper">
+        <div class="inner"></div>
+      </div>
+    </div>
+    <div>
+      <div class="container">
+        <div class="circle diagonal-to-top-right"></div>
+      </div>
+    </div>
+    <div>
+      <div class="moon"></div>
+    </div>
+  </body>
+</html>
